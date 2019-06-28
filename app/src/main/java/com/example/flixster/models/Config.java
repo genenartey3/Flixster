@@ -24,6 +24,7 @@ public class Config {
         posterSize = posterSizeOptions.optString(3, "w342");
         // parse  backdrop sizes and use the landscape option which is at index 1 and w780 as fallback
         JSONArray backdropSizeOptions = images.getJSONArray("backdrop_sizes");
+        backdropSize = backdropSizeOptions.optString(1, "w780");
     }
 
     // helper function for constructing urls
@@ -37,5 +38,9 @@ public class Config {
 
     public String getPosterSize() {
         return posterSize;
+    }
+
+    public String getBackdropSize() {
+        return backdropSize;
     }
 }
